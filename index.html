@@ -1,303 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PPSC e-Library</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f7f8fa;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #002b49;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2em;
-    }
-    .search-container {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .search-container input {
-      width: 60%;
-      padding: 12px;
-      font-size: 1.1em;
-      border-radius: 5px;
-      border: 1px solid #3498db;
-      margin-right: 10px;
-    }
-    .search-container button {
-      padding: 12px 20px;
-      font-size: 1.1em;
-      background-color: #3498db;
-      color: white;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .search-container button:hover {
-      background-color: #2980b9;
-    }
-    .container {
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .category-title {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #34495e;
-      text-align: center;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #3498db;
-    }
-    .book-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .book {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-    .book:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    }
-    .book img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-    .book h3 {
-      font-size: 1.5em;
-      margin: 15px 0;
-      color: #34495e;
-    }
-    .book p {
-      font-size: 1em;
-      color: #7f8c8d;
-      margin-bottom: 10px;
-    }
-    .button {
-      display: inline-block;
-      padding: 12px 18px;
-      background-color: #3498db;
-      color: white;
-      text-decoration: none;
-      font-size: 1.1em;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-      margin-right: 10px;
-    }
-    .button:hover {
-      background-color: #2980b9;
-    }
-    .download-btn {
-      background-color: #27ae60;
-    }
-    .download-btn:hover {
-      background-color: #2ecc71;
-    }
-  </style>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-
-<header>
-  <h1>📚 PPSC E-Library</h1>
-  <p>Read books online anytime</p>
-</header>
-
-<!-- OPAC Search Bar -->
-<div class="search-container">
-  <input type="text" id="searchInput" placeholder="Search for books..." onkeyup="searchBooks()">
-  <button onclick="searchBooks()">Search</button>
-</div>
-
-<div class="container">
-  
-  <!-- Category 1: Law Books -->
-  <div>
-    <h2 class="category-title">⚖️ Law Books</h2>
-    <div class="book-list" id="lawBooks">
-      <div class="book">
-        <img src="https://via.placeholder.com/300x200" alt="Law Book">
-        <h3>Constitutional Law</h3>
-        <p>Author: Unknown</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
-        <a class="button download-btn" href="YOUR_BOOK_DOWNLOAD_LINK_HERE" download>Download Book</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Category 2: Science Fiction -->
-  <div>
-    <h2 class="category-title">🚀 Science Fiction</h2>
-    <div class="book-list" id="sciFiBooks">
-      <div class="book">
-        <img src="https://via.placeholder.com/300x200" alt="Sci-Fi Book">
-        <h3>Dune</h3>
-        <p>Author: Frank Herbert</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
-        <a class="button download-btn" href="YOUR_BOOK_DOWNLOAD_LINK_HERE" download>Download Book</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Category 3: Health & Wellness -->
-  <div>
-    <h2 class="category-title">💪 Health & Wellness</h2>
-    <div class="book-list" id="healthBooks">
-      <div class="book">
-        <img src="https://via.placeholder.com/300x200" alt="Health Book">
-        <h3>Healthy Living</h3>
-        <p>Author: Unknown</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
-        <a class="button download-btn" href="YOUR_BOOK_DOWNLOAD_LINK_HERE" download>Download Book</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Category 4: Business & Economics -->
-  <div>
-    <h2 class="category-title">💼 Business & Economics</h2>
-    <div class="book-list" id="businessBooks">
-      <div class="book">
-        <img src="https://via.placeholder.com/300x200" alt="Business Book">
-        <h3>Introduction to Economics</h3>
-        <p>Author: Unknown</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
-        <a class="button download-btn" href="YOUR_BOOK_DOWNLOAD_LINK_HERE" download>Download Book</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Category 5: Art & Design -->
-  <div>
-    <h2 class="category-title">🎨 Art & Design</h2>
-    <div class="book-list" id="artBooks">
-      <div class="book">
-        <img src="https://via.placeholder.com/300x200" alt="Art Book">
-        <h3>Design Basics</h3>
-        <p>Author: Unknown</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
-        <a class="button download-btn" href="YOUR_BOOK_DOWNLOAD_LINK_HERE" download>Download Book</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Category 6: Music -->
-  <div>
-    <h2 class="category-title">🎶 Music</h2>
-    <div class="book-list" id="musicBooks">
-      <div class="book">
-        <img src="https://via.placeholder.com/300x200" alt="Music Book">
-        <h3>Music Theory</h3>
-        <p>Author: Unknown</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
-        <a class="button download-btn" href="YOUR_BOOK_DOWNLOAD_LINK_HERE" download>Download Book</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Category 7: Self-Help -->
-  <div>
-    <h2 class="category-title">🧠 Self-Help</h2>
-    <div class="book-list" id="selfHelpBooks">
-      <div class="book">
-        <img src="https://via.placeholder.com/300x200" alt="Self-Help Book">
-        <h3>Grow Your Mindset</h3>
-        <p>Author: Unknown</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
-        <a class="button download-btn" href="YOUR_BOOK_DOWNLOAD_LINK_HERE" download>Download Book</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Category 8: Cooking -->
-  <div>
-    <h2 class="category-title">🍳 Cooking</h2>
-    <div class="book-list" id="cookingBooks">
-      <div class="book">
-        <img src="https://via.placeholder.com/300x200" alt="Cooking Book">
-        <h3>The Joy of Cooking</h3>
-        <p>Author: Unknown</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
-        <a class="button download-btn" href="YOUR_BOOK_DOWNLOAD_LINK_HERE" download>Download Book</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Category 9: Children's Books -->
-  <div>
-    <h2 class="category-title">👶 Children's Books</h2>
-    <div class="book-list" id="childrenBooks">
-      <div class="book">
-        <img src="https://via.placeholder.com/300x200" alt="Children's Book">
-        <h3>The Very Hungry Caterpillar</h3>
-        <p>Author: Eric Carle</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
-        <a class="button download-btn" href="YOUR_BOOK_DOWNLOAD_LINK_HERE" download>Download Book</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Category 10: Travel & Adventure -->
-  <div>
-    <h2 class="category-title">🌍 Travel & Adventure</h2>
-    <div class="book-list" id="travelBooks">
-      <div class="book">
-        <img src="https://via.placeholder.com/300x200" alt="Travel Book">
-        <h3>Adventure Awaits</h3>
-        <p>Author: Unknown</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
-        <a class="button download-btn" href="YOUR_BOOK_DOWNLOAD_LINK_HERE" download>Download Book</a>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<script>
-  // Function to search books based on input text
-  function searchBooks() {
-    var input, filter, books, book, title, author, i;
-    input = document.getElementById('searchInput');
-    filter = input.value.toUpperCase();
-    books = document.getElementsByClassName('book');
-    
-    // Loop through all books and hide those that don't match the search query
-    for (i = 0; i < books.length; i++) {
-      book = books[i];
-      title = book.getElementsByTagName("h3")[0];
-      author = book.getElementsByTagName("p")[0];
-      if (title && author) {
-        if (title.innerHTML.toUpperCase().indexOf(filter) > -1 || author.innerHTML.toUpperCase().indexOf(filter) > -1) {
-          book.style.display = "";
-        } else {
-          book.style.display = "none";
-        }
-      }
-    }
-  }
-</script>
-
-</body>
+		<ul>
+		  <li><a href="">Home</a></li>
+		  <li><a href="displaydata.php">E-Library</a></li>
+		  <li><a href="http://alapan.me" target="_blank">Visit My Blog!</a></li>
+		</ul>
+		<div class="form-style-6">
+			<h1>Alapan's E-Library Book Input Portal</h1>
+				<form method="POST" action="connection.php" enctype="multipart/form-data" onsubmit="return validate(this)">
+					<input type="text" id="name" name="bookname" placeholder="Book Name*" required/>
+					<textarea cols="25" rows="4" name="bookdesc" placeholder="Book Description*" required></textarea>
+					<input type="text" id="password" name="bookauthor" placeholder="Book Author*"/ required>
+					<select name="booklang" required>
+						  <option selected disabled>Select Book Language*</option>
+						  <option value="English">English</option>
+						  <option value="Hindi">Hindi</option>
+						  <option value="German">German</option>
+						  <option value="French">French</option>
+						  <option value="Other">Other Language</option>
+					</select>
+					<div style="padding-bottom: 6px"><label>Select Book* (Only Pdf, Doc & Docx files are allowed)</label></div>
+					<input type="file" name="bookfile" id="bookfile" required/>
+					<input type="text" id="name" name="uploadername" placeholder="Uploaders Name*" required/>
+					<input type="email" id="name" name="uploaderemail" placeholder="Uploaders Email*" required/>
+					<input type="submit" id="submit" name="submit">
+			</form>
+		</div>
+	</body>
 </html>
+ <script>
+    function validate() {
+    var val = document.getElementById('bookfile').value.toLowerCase();
+    var regex = new RegExp("(.*?)\.(docx|doc|pdf)$");
+        if(!(regex.test(val))) {
+            document.getElementById('bookfile').value = '';
+            alert('Please select correct file format.');
+            return false;   
+        }
+		return true;
+		}
+</script>
