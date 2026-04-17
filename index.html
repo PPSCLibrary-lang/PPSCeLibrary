@@ -1,20 +1,67 @@
+<!DOCTYPE html>
+<html>
 <head>
   <title>My E-Library</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .book {
+      background: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
 </head>
-<body style="font-family: Arial; padding: 20px;">
+<body>
 
+<header>
   <h1>📚 My E-Library</h1>
+  <p>Read books online anytime</p>
+</header>
 
-  <h2>Law Books</h2>
-  <p>
-    Civil Law Basics - 
-    <a href="PASTE_YOUR_BOOK_LINK_HERE" target="_blank">Read Book</a>
-  </p>
+<div class="container">
 
-  <h2>English Books</h2>
-  <p>
-    English Grammar - 
-    <a href="PASTE_YOUR_BOOK_LINK_HERE" target="_blank">Read Book</a>
-  </p>
-  </body>
+  <h2>⚖️ Law Books</h2>
+
+  <div class="book">
+    <h3>Civil Law Basics</h3>
+    <p>Author: Unknown</p>
+    <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
+  </div>
+
+  <h2>📖 English Books</h2>
+
+  <div class="book">
+    <h3>English Grammar</h3>
+    <p>Author: Unknown</p>
+    <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
+  </div>
+
+</div>
+
+</body>
 </html>
