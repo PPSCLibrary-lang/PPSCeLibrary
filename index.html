@@ -25,6 +25,31 @@
     header p {
       font-size: 1.2em;
     }
+    .search-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .search-container input {
+      width: 50%;
+      padding: 10px;
+      font-size: 1.1em;
+      border-radius: 5px;
+      border: 1px solid #3498db;
+      margin-right: 10px;
+    }
+    .search-container button {
+      padding: 10px 20px;
+      font-size: 1.1em;
+      background-color: #3498db;
+      color: white;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .search-container button:hover {
+      background-color: #2980b9;
+    }
     .container {
       padding: 20px;
       max-width: 1200px;
@@ -85,12 +110,18 @@
   <p>Read books online anytime</p>
 </header>
 
+<!-- OPAC Search Bar -->
+<div class="search-container">
+  <input type="text" id="searchInput" placeholder="Search for books..." onkeyup="searchBooks()">
+  <button onclick="searchBooks()">Search</button>
+</div>
+
 <div class="container">
   
   <!-- Law Books Section -->
   <div>
     <h2 class="category-title">⚖️ Law Books</h2>
-    <div class="book-list">
+    <div class="book-list" id="lawBooks">
 
       <div class="book">
         <h3>Civil Law Basics</h3>
@@ -98,7 +129,7 @@
         <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
       </div>
 
-      <!-- Add more books here as needed -->
+      <!-- More books go here -->
 
     </div>
   </div>
@@ -106,7 +137,7 @@
   <!-- English Books Section -->
   <div>
     <h2 class="category-title">📖 English Books</h2>
-    <div class="book-list">
+    <div class="book-list" id="englishBooks">
 
       <div class="book">
         <h3>English Grammar</h3>
@@ -114,12 +145,36 @@
         <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
       </div>
 
-      <!-- Add more books here as needed -->
+      <!-- More books go here -->
 
     </div>
   </div>
 
 </div>
+
+<script>
+  // Function to search books based on input text
+  function searchBooks() {
+    var input, filter, books, book, title, author, i;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+    books = document.getElementsByClassName('book');
+    
+    // Loop through all books and hide those that don't match the search query
+    for (i = 0; i < books.length; i++) {
+      book = books[i];
+      title = book.getElementsByTagName("h3")[0];
+      author = book.getElementsByTagName("p")[0];
+      if (title && author) {
+        if (title.innerHTML.toUpperCase().indexOf(filter) > -1 || author.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          book.style.display = "";
+        } else {
+          book.style.display = "none";
+        }
+      }
+    }
+  }
+</script>
 
 </body>
 </html>
