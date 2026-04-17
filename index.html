@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PPSC e LIBRARY</title>
+  <title>PPSC e-Library</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -12,14 +12,14 @@
       padding: 0;
     }
     header {
-      background: #2c3e50;
+      background-color: #002b49;
       color: white;
-      padding: 30px 20px;
+      padding: 20px 0;
       text-align: center;
-      border-bottom: 5px solid #3498db;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     header h1 {
-      font-size: 2.5em;
+      font-size: 3em;
       margin-bottom: 10px;
     }
     header p {
@@ -27,18 +27,18 @@
     }
     .search-container {
       text-align: center;
-      margin-top: 20px;
+      margin: 20px 0;
     }
     .search-container input {
-      width: 50%;
-      padding: 10px;
+      width: 60%;
+      padding: 12px;
       font-size: 1.1em;
       border-radius: 5px;
       border: 1px solid #3498db;
       margin-right: 10px;
     }
     .search-container button {
-      padding: 10px 20px;
+      padding: 12px 20px;
       font-size: 1.1em;
       background-color: #3498db;
       color: white;
@@ -56,15 +56,16 @@
       margin: 0 auto;
     }
     .category-title {
-      font-size: 1.8em;
+      font-size: 2em;
       margin-bottom: 20px;
-      color: #2c3e50;
+      color: #34495e;
+      text-align: center;
+      padding-bottom: 10px;
       border-bottom: 2px solid #3498db;
-      padding-bottom: 5px;
     }
     .book-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 20px;
     }
     .book {
@@ -73,20 +74,27 @@
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
     .book:hover {
-      transform: translateY(-10px);
+      transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    .book img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
     }
     .book h3 {
       font-size: 1.5em;
-      margin: 0;
+      margin: 15px 0;
       color: #34495e;
     }
     .book p {
-      font-size: 1.1em;
+      font-size: 1em;
       color: #7f8c8d;
-      margin: 10px 0;
+      margin-bottom: 10px;
     }
     .button {
       display: inline-block;
@@ -123,6 +131,7 @@
     <h2 class="category-title">📚 Generalities</h2>
     <div class="book-list" id="generalitiesBooks">
       <div class="book">
+        <img src="https://via.placeholder.com/300x200" alt="General Knowledge Book">
         <h3>Intro to General Knowledge</h3>
         <p>Author: Unknown</p>
         <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
@@ -135,6 +144,7 @@
     <h2 class="category-title">🧠 Philosophy</h2>
     <div class="book-list" id="philosophyBooks">
       <div class="book">
+        <img src="https://via.placeholder.com/300x200" alt="Philosophy Book">
         <h3>The Republic</h3>
         <p>Author: Plato</p>
         <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
@@ -147,6 +157,7 @@
     <h2 class="category-title">✝️ Religion</h2>
     <div class="book-list" id="religionBooks">
       <div class="book">
+        <img src="https://via.placeholder.com/300x200" alt="Religion Book">
         <h3>The Bible</h3>
         <p>Author: Unknown</p>
         <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
@@ -159,6 +170,7 @@
     <h2 class="category-title">👥 Social Sciences</h2>
     <div class="book-list" id="socialSciencesBooks">
       <div class="book">
+        <img src="https://via.placeholder.com/300x200" alt="Social Science Book">
         <h3>Introduction to Sociology</h3>
         <p>Author: Unknown</p>
         <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
@@ -171,6 +183,7 @@
     <h2 class="category-title">🗣️ Language</h2>
     <div class="book-list" id="languageBooks">
       <div class="book">
+        <img src="https://via.placeholder.com/300x200" alt="Language Book">
         <h3>Learn Spanish</h3>
         <p>Author: Unknown</p>
         <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
@@ -178,90 +191,7 @@
     </div>
   </div>
 
-  <!-- Category 6: Science -->
-  <div>
-    <h2 class="category-title">🔬 Science</h2>
-    <div class="book-list" id="scienceBooks">
-      <div class="book">
-        <h3>Physics 101</h3>
-        <p>Author: Unknown</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Category 7: Technology -->
-  <div>
-    <h2 class="category-title">💻 Technology</h2>
-    <div class="book-list" id="technologyBooks">
-      <div class="book">
-        <h3>Introduction to AI</h3>
-        <p>Author: Unknown</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Category 8: Arts -->
-  <div>
-    <h2 class="category-title">🎨 Arts</h2>
-    <div class="book-list" id="artsBooks">
-      <div class="book">
-        <h3>The Art of Drawing</h3>
-        <p>Author: Unknown</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Category 9: Literature -->
-  <div>
-    <h2 class="category-title">📚 Literature</h2>
-    <div class="book-list" id="literatureBooks">
-      <div class="book">
-        <h3>Shakespeare's Plays</h3>
-        <p>Author: William Shakespeare</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Category 10: History/Geography -->
-  <div>
-    <h2 class="category-title">🌍 History/Geography</h2>
-    <div class="book-list" id="historyGeographyBooks">
-      <div class="book">
-        <h3>World History</h3>
-        <p>Author: Unknown</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Book</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Category 11: Magazines -->
-  <div>
-    <h2 class="category-title">📰 Magazines</h2>
-    <div class="book-list" id="magazinesBooks">
-      <div class="book">
-        <h3>Time Magazine</h3>
-        <p>Author: Unknown</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Magazine</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Category 12: Newspapers -->
-  <div>
-    <h2 class="category-title">🗞️ Newspapers</h2>
-    <div class="book-list" id="newspapersBooks">
-      <div class="book">
-        <h3>The New York Times</h3>
-        <p>Author: Unknown</p>
-        <a class="button" href="PASTE_YOUR_LINK_HERE" target="_blank">Read Newspaper</a>
-      </div>
-    </div>
-  </div>
-
+  <!-- More categories will follow in the same format -->
 </div>
 
 <script>
